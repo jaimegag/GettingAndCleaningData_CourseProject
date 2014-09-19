@@ -11,6 +11,7 @@ To run the run_analysis.R script from your R console, make sure the following co
 * You have previously downloaded the raw data from its URL and unzipped it into a "UCI HAR Dataset" folder
 * Your working directory contains that "UCI HAR Dataset" folder
 * The following packages are loaded in your R session: "reshape2" and "dplyr"
+
 Then source the script with a command like this: `source("./run_analysis.R")`.  
 Please **allow ~40 seconds for the script to finish**.  
 After the script has finished, a new file tidy.txt will available in your working directory.  
@@ -23,7 +24,6 @@ This is the command you can execute, assuming the tidy.txt file is in your worki
 
 ## How the run_analysis.R script works
 Using the raw data located in the "./UCI HAR Dataset/" folder, the script performs the following operations:  
-
 1.  Merges the training and the test sets to create one data set.
 To clip all data together, without any column and row references in the raw data, I had to put all pieces together in the only reasonable way based on the dimensions of the raw data sets. A graphical explanation of this "puzzel" can be found in this diagram, courtesy of David Hood: ![Diagram](https://coursera-forum-screenshots.s3.amazonaws.com/ab/a2776024af11e4a69d5576f8bc8459/Slide2.png)
 2.  Extracts only the measurements on the mean and standard deviation for each measurement.
