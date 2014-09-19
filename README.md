@@ -24,23 +24,17 @@ This is the command you can execute, assuming the tidy.txt file is in your worki
 ## How the run_analysis.R script works
 Using the raw data located in the "./UCI HAR Dataset/" folder, the script performs the following operations:  
 
-1.  Merges the training and the test sets to create one data set.  
-To clip all data together, without any column and row references in the raw data, I had to put all pieces together in the only reasonable way based on the dimensions of the raw data sets. A graphical explanation of this "puzzel" can be found in this diagram, courtesy of David Hood: ![Diagram](https://coursera-forum-screenshots.s3.amazonaws.com/ab/a2776024af11e4a69d5576f8bc8459/Slide2.png)  
-2.  Extracts only the measurements on the mean and standard deviation for each measurement.  
-3.  Uses descriptive activity names to name the activities in the data set.  
-4.  Appropriately labels the data set with descriptive variable names.  
-5.  From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.  
-6.  Write tidy data set into tidy.txt file.  
+1.  Merges the training and the test sets to create one data set.
+To clip all data together, without any column and row references in the raw data, I had to put all pieces together in the only reasonable way based on the dimensions of the raw data sets. A graphical explanation of this "puzzel" can be found in this diagram, courtesy of David Hood: ![Diagram](https://coursera-forum-screenshots.s3.amazonaws.com/ab/a2776024af11e4a69d5576f8bc8459/Slide2.png)
+2.  Extracts only the measurements on the mean and standard deviation for each measurement.
+3.  Uses descriptive activity names to name the activities in the data set.
+4.  Appropriately labels the data set with descriptive variable names.
+5.  From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+6.  Write tidy data set into tidy.txt file.
 
-
-1. Item 1
-2. Item 2
-3. Item 3
-    + Item 3a
-    + Item 3b
 
 ## References
 During the process of building the script and preparing the tidy data I consulted the following resources for help:  
-* Hadley Wickham's Tiday data [paper](http://vita.had.co.nz/papers/tidy-data.pdf)  
-* David Hood's Course Project [FAQ](https://class.coursera.org/getdata-007/forum/thread?thread_id=49)  
-* David Hood's Long Data, Wide Data, and Tidy Data [discussion](https://class.coursera.org/getdata-007/forum/thread?thread_id=214)  
+* Hadley Wickham's Tiday data [paper](http://vita.had.co.nz/papers/tidy-data.pdf)
+* David Hood's Course Project [FAQ](https://class.coursera.org/getdata-007/forum/thread?thread_id=49)
+* David Hood's Long Data, Wide Data, and Tidy Data [discussion](https://class.coursera.org/getdata-007/forum/thread?thread_id=214)
