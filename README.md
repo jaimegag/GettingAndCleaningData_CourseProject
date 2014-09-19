@@ -24,13 +24,47 @@ This is the command you can execute, assuming the tidy.txt file is in your worki
 
 ## How the run_analysis.R script works
 Using the raw data located in the "./UCI HAR Dataset/" folder, the script performs the following operations:  
+
 1.  Merges the training and the test sets to create one data set.
-To clip all data together, without any column and row references in the raw data, I had to put all pieces together in the only reasonable way based on the dimensions of the raw data sets. A graphical explanation of this "puzzel" can be found in this diagram, courtesy of David Hood: ![Diagram](https://coursera-forum-screenshots.s3.amazonaws.com/ab/a2776024af11e4a69d5576f8bc8459/Slide2.png)
+    + Read the raw data: each of these file into separated data frames:  
+    "./UCI HAR Dataset/activity_labels.txt"  
+    "./UCI HAR Dataset/features.txt"  
+    "./UCI HAR Dataset/train/X_train.txt"  
+    "./UCI HAR Dataset/train/subject_train.txt"  
+    "./UCI HAR Dataset/train/y_train.txt"  
+    "./UCI HAR Dataset/test/X_test.txt"  
+    "./UCI HAR Dataset/test/subject_test.txt"  
+    "./UCI HAR Dataset/test/y_test.txt"  
+    The remaining data files from the raw data folder are not required for this process.
+    + Combine all the train and test subject and features data together into a single data frame: To do this, without any column and row references in the raw data, I looked at the dimensions of the individual data frames to see how they could fit together, found the only reasonable way and finally clip all pieces together using cbind and and rbind commands. Both train and test data have 561 feature variables plus the activity and the subject. On both sets, the number of rows matched between the thre files (X, Y, subjects). A graphical explanation of this "puzzel" can be found in this diagram, courtesy of David Hood: ![Diagram](https://coursera-forum-screenshots.s3.amazonaws.com/ab/a2776024af11e4a69d5576f8bc8459/Slide2.png). The 3 train data sets are combained with cbind, and so do the test data sets. Then both resulting data sets are combined together with a rbind. No 'merge' command was considered required on this step.
+    + Create the column names for all variables. A vector was created for this. Since Activities and Subjects were clipped on the left side of the data frame, for those two values I harcoded a name ("activity_name" and "subject_identifier"). For the remaining variables I used the 561 features from the features data set which convenientely had size=561, coercing them from factor to numeric. The resulting vector was assigned to the `colnames` of the `alldata` data frame.
 2.  Extracts only the measurements on the mean and standard deviation for each measurement.
+On this step I subsetted the data frame resulting from the previous step using the select method from the dplyr package, keeping the activity and subject variables, and all other feature variables conatining "mean" or "std", excluding "meanFreq" and "angle" variables.
+ This step generated a new data.frame object: `extrdata`
 3.  Uses descriptive activity names to name the activities in the data set.
+All IDs in the activities variable are replaced by descriptive names from the "activity_labels" data frame. To do this I combined the mutate and mapValues methods from the dplyr package.
+    + mapValues received the entired vector of activities (ID), and the map of ID->NAME in two vectors using the two columns of the activity_labels data frame, coerced to integer and character respectively. the result was assigned to the existing activities column of the big data frame using the mutate method.
+    + This should be equivalent to merge both data sets, but I chose mutate+mapvalues for clarity, to have only the activity names and not the ids in the resulting data set in 1 step.
+This step generated a new data.frame object: `descrdata`
 4.  Appropriately labels the data set with descriptive variable names.
+Cleanup the variable names from typos and odd characters, and translate some names into more descriptive ones. All done using the gsub method and regular expresions:
+    + remove parenthesis "()"
+    + remove double "Body" words
+    + prefix "freq" instead of "f" for frequency domain signals
+    + prefix "time" instead of "t" for time domain signals
+    + mean with capital M
+    + std to StandardDev
+    + X into Xaxise for X axis indicator
+    + Y into Xaxise for Y axis indicator
+    + Z into Xaxise for Z axis indicator
+    + replacing "hyphon" with "underscode" for clarity  
+    And apply the resulting vector to the `colnames` of the data frame.
 5.  From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+To execute this step I used the melt and dcast methods from the reshape2 package:
+    + First the melt was executed on the `descrdata` data frame, keeping "activity_name" and "subject_identifier" as IDs, and moving all feature variables to one per row basis creating a tall&thin dataframe `meltData`
+    + Second, dcast was called to calculate the average of each variable for each activity and each subject, using "mean" as the aggregate function.
 6.  Write tidy data set into tidy.txt file.
+A call to write.table is made, with row.name=FALSE
 
 
 ## References
