@@ -1,8 +1,8 @@
 # Reshaping and summarizing raw data into a tidy data set
 In this project I will get data collected from accelerometers from the Samsung Galaxy S smartphone, to transform it, clean it, reshape it, summarize it, in order to generate a tidy data set which can be used for later analysis.  
-The raw data is located in this URL: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip. A full description of the data is available at the site where the data was obtained: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones.  
+The raw data is located in this [URL](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip).
 The process to generate the tidy data set from the raw data will be performed by a single script: run_analysis.R. Details on how to operate with it are below.  
-Along with this README.md file and the run_analysis.R script, you can find a CodeBook.md file with the description of the variables in the same GitHub location folder.  
+Along with this README.md file and the run_analysis.R script you can find a CodeBook.md in the same GitHub location folder with the description of the variables.  
 
 
 ## How to operate the run_analysis.R script and generate the tidy data set
@@ -25,7 +25,7 @@ This is the command you can execute, assuming the tidy.txt file is in your worki
 ## How the run_analysis.R script works
 Using the raw data located in the "./UCI HAR Dataset/" folder, the script performs the following operations:  
 
-1.  Merges the training and the test sets to create one data set.
+1.  **Merges the training and the test sets to create one data set.**
     + Read the raw data: each of these file into separated data frames:  
     "./UCI HAR Dataset/activity_labels.txt"  
     "./UCI HAR Dataset/features.txt"  
@@ -36,35 +36,32 @@ Using the raw data located in the "./UCI HAR Dataset/" folder, the script perfor
     "./UCI HAR Dataset/test/subject_test.txt"  
     "./UCI HAR Dataset/test/y_test.txt"  
     The remaining data files from the raw data folder are not required for this process.
-    + Combine all the train and test subject and features data together into a single data frame: To do this, without any column and row references in the raw data, I looked at the dimensions of the individual data frames to see how they could fit together, found the only reasonable way and finally clip all pieces together using cbind and and rbind commands. Both train and test data have 561 feature variables plus the activity and the subject. On both sets, the number of rows matched between the thre files (X, Y, subjects). A graphical explanation of this "puzzel" can be found in this diagram, courtesy of David Hood: ![Diagram](https://coursera-forum-screenshots.s3.amazonaws.com/ab/a2776024af11e4a69d5576f8bc8459/Slide2.png). The 3 train data sets are combained with cbind, and so do the test data sets. Then both resulting data sets are combined together with a rbind. No 'merge' command was considered required on this step.
-    + Create the column names for all variables. A vector was created for this. Since Activities and Subjects were clipped on the left side of the data frame, for those two values I harcoded a name ("activity_name" and "subject_identifier"). For the remaining variables I used the 561 features from the features data set which convenientely had size=561, coercing them from factor to numeric. The resulting vector was assigned to the `colnames` of the `alldata` data frame.
-2.  Extracts only the measurements on the mean and standard deviation for each measurement.
-On this step I subsetted the data frame resulting from the previous step using the select method from the dplyr package, keeping the activity and subject variables, and all other feature variables conatining "mean" or "std", excluding "meanFreq" and "angle" variables.
- This step generated a new data.frame object: `extrdata`
-3.  Uses descriptive activity names to name the activities in the data set.
-All IDs in the activities variable are replaced by descriptive names from the "activity_labels" data frame. To do this I combined the mutate and mapValues methods from the dplyr package.
-    + mapValues received the entired vector of activities (ID), and the map of ID->NAME in two vectors using the two columns of the activity_labels data frame, coerced to integer and character respectively. the result was assigned to the existing activities column of the big data frame using the mutate method.
+    + Combine all the train and test subject and features data together into a single data frame: To do this, after understanding the separation of files in the raw data package, I looked at the dimensions of the individual data frames to see how they could fit together, and found the only reasonable way and finally clip all pieces together using cbind and and rbind commands. Both train and test data have 561 feature variables plus the activity and the subject. On both sets, the number of rows matched between the three files (X, Y, subjects). So everything fit perfectly. A graphical explanation of this "puzzle" can be found in this diagram, courtesy of David Hood: ![Diagram](https://coursera-forum-screenshots.s3.amazonaws.com/ab/a2776024af11e4a69d5576f8bc8459/Slide2.png). The three train data sets are combained using cbind into one data frame, and so are the test data sets. Then both resulting data frames are combined together with a rbind, resulting into a big data frame: `alldata`. No 'merge' or 'join' was considered required on this step since all feature variables are independent variables and all rows are separate observations.
+    + Create the column names for all variables.  
+    A character vector was created for this. Since Activities and Subjects variables were clipped on the left side of the data frame, for those two values I harcoded a name ("activity_name" and "subject_identifier"). For the remaining variables I used the 561 features from the features data set which convenientely had size=561, coercing them from factor to numeric. The resulting vector was assigned to the `colnames` of the `alldata` data frame.
+
+2.  **Extracts only the measurements on the mean and standard deviation for each measurement.**  
+On this step I subsetted the data frame resulting from the previous step using the select method from the dplyr package, keeping the activity and subject columns, and all other feature variables containing "mean" or "std" in their column name, but excluding column names containing "meanFreq" and "angle".
+ This step generated a new data frame object: `extrdata`
+
+3.  **Uses descriptive activity names to name the activities in the data set.**  
+All IDs in the activities variable columnd are replaced by descriptive names from the "activity_labels" data frame. To do this I combined the mutate and mapValues methods from the dplyr package.
+    + mapValues method received the entire vector of activities (ID), and the mapping of ID->NAME in two vectors using the two columns of the activity_labels data frame, coerced to integer and character respectively. The result was assigned to the existing activities column of the big data frame using the mutate method.
     + This should be equivalent to merge both data sets, but I chose mutate+mapvalues for clarity, to have only the activity names and not the ids in the resulting data set in 1 step.
-This step generated a new data.frame object: `descrdata`
-4.  Appropriately labels the data set with descriptive variable names.
-Cleanup the variable names from typos and odd characters, and translate some names into more descriptive ones. All done using the gsub method and regular expresions:
-    + remove parenthesis "()"
-    + remove double "Body" words
-    + prefix "freq" instead of "f" for frequency domain signals
-    + prefix "time" instead of "t" for time domain signals
-    + mean with capital M
-    + std to StandardDev
-    + X into Xaxise for X axis indicator
-    + Y into Xaxise for Y axis indicator
-    + Z into Xaxise for Z axis indicator
-    + replacing "hyphon" with "underscode" for clarity  
-    And apply the resulting vector to the `colnames` of the data frame.
-5.  From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+This step generated a new data frame object: `descrdata`
+
+4.  **Appropriately labels the data set with descriptive variable names.**  
+Cleanup the variable names from typos and odd characters, and translate some names into more descriptive ones. All done using the gsub method and regular expresions. All applied over a character vector. In the end this vector is used to replace the `colnames` of the data frame.
+To check the specifics about the changes on this variable names you can check the CodeBook file.
+
+5.  **From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.**  
 To execute this step I used the melt and dcast methods from the reshape2 package:
-    + First the melt was executed on the `descrdata` data frame, keeping "activity_name" and "subject_identifier" as IDs, and moving all feature variables to one per row basis creating a tall&thin dataframe `meltData`
-    + Second, dcast was called to calculate the average of each variable for each activity and each subject, using "mean" as the aggregate function.
-6.  Write tidy data set into tidy.txt file.
-A call to write.table is made, with row.name=FALSE
+    + First the melt was executed on the `descrdata` data frame, keeping "activity_name" and "subject_identifier" as IDs, and so moving all feature variables to one per row basis creating a tall&thin data frame: `meltData`
+    + Second, dcast was called to calculate the average of each variable for each activity and each subject, using "mean" as the aggregate function, resulting into the final `tidyData` data frame.  
+    
+6.  **Write tidy data set into output file**  
+A call to write.table is made, with row.name=FALSE.
+Output file name is "tidy.txt"
 
 
 ## References
