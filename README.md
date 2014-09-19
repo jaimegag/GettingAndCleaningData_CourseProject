@@ -51,7 +51,7 @@ All IDs in the activities variable columnd are replaced by descriptive names fro
 This step generated a new data frame object: `descrdata`
 
 4.  **Appropriately labels the data set with descriptive variable names.**  
-Cleanup the variable names from typos and odd characters, and translate some names into more descriptive ones. All done using the gsub method and regular expresions. All applied over a character vector. In the end this vector is used to replace the `colnames` of the data frame.
+This step was partially covered already on step #1, where I used the feature friendly names to replace the V1,V2 initial variable names. Now here on step #4 I'll go a step further cleaning up those variable names a bit more from typos and odd characters, and translate some names into more descriptive ones. All done using the gsub method and regular expresions. All applied over a character vector. In the end this vector is used to replace the `colnames` of the data frame.
 To check the specifics about the changes on this variable names you can check the CodeBook file.
 
 5.  **From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.**  
