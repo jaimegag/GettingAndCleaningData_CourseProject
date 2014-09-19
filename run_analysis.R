@@ -7,10 +7,6 @@
 # Scripts expects this data already downloaded and unzipped into "./UCI HAR Dataset/"
 # Both that folder and this script must be in the working directory for it to work.
 #
-# The raw data was originally obtained from the accelerometers from the Samsung Galaxy S smartphone.
-# A full description is available at the site where the data was obtained: 
-# http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
-#
 # Script steps:
 #    1. Merges the training and the test sets to create one data set.
 #    2. Extracts only the measurements on the mean and standard deviation for each measurement. 
@@ -18,8 +14,9 @@
 #    4. Appropriately labels the data set with descriptive variable names. 
 #    5. From the data set in step 4, creates a second, independent tidy data set with the average
 #       of each variable for each activity and each subject.
+#    6. Write tidy data set into tidy.txt file
 #
-# SCRIPT REQUIRES "reshape2", dplyr" and "tidyr" libraries loaded!!
+# SCRIPT REQUIRES "reshape2" and "dplyr" packages loaded!!
 
 # STEP 1
 # -> Merges the training and test data sets to create one data set.
@@ -97,3 +94,7 @@ colnames(descrdata) <- clean_names
 meltData <- melt(descrdata,id=c("activity_name","subject_identifier"))
 # Summarize all variables with the average for each activity and subject
 tidyData <- dcast(meltData,activity_name + subject_identifier ~ variable, fun.aggregate=mean)
+
+# STEP 6
+# -> Write tidy data set into tidy.txt file
+write.table(tidyData,"./tidy.txt", row.name=FALSE)
