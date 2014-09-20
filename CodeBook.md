@@ -69,7 +69,7 @@ Last step in this proces is to output the Tidy Data Set into a file called tidy.
 
 | Variable                            | Range                                                               | Description                                                                 |
 |-------------------------------------|---------------------------------------------------------------------|-----------------------------------------------------------------------------|
-| activity_name                       | WALKING|WALKING_UPSTAIRS|WALKING_DOWNSTAIRS|SITTING|STANDING|LAYING | Activity Name                                                               |
+| activity_name                       | WALKING,WALKING_UPSTAIRS,WALKING_DOWNSTAIRS,SITTING,STANDING,LAYING | Activity Name                                                               |
 | subject_identifier                  | [1,6]                                                               | Subject Identifier                                                          |
 | Time_BodyAcc_Mean_Xaxis             | [-1,1]                                                              | Mean Time Domain Body Acceleration Signal on X axis                         |
 | Time_BodyAcc_Mean_Yaxis             | [-1,1]                                                              | Mean Time Domain Body Acceleration Signal on Y axis                         |
