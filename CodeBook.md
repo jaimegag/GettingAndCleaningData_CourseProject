@@ -9,12 +9,13 @@ The University of California Irvine, at their Center for Machine Learning and In
 ## Raw Data:
 Raw data was collected from the accelerometers from the Samsung Galaxy S II smartphone, and was downloaded for this analysis from this [URL](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip).  
 A full description of the data is available at the [UCI Machine Learning Repository Site](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones), including a CodeBook for the Raw data variables.   
-Essentially, the raw data is composed by 561 feature variables, plus a subject and an activity. Features are normalized and bounded within [-1,1]. This normalization cancel the units.
+Essentially, the raw data is composed by 561 feature variables, plus a subject and an activity, separated in two Data Sets (train and test). Features are normalized and bounded within [-1,1]. This normalization cancel the units. Additionally it also includes a set of variable names for the 561 feature variables and the 6 activity label names.
 
 
 ## Tidy Data Dictionary:
 
-No units due to the normalization made on the raw data features. "activity_name" holds character strings, and "subject_identifier" holds integer values (IDs)
+No units are specified due to the normalization made on the raw data features. "activity_name" holds character strings, and "subject_identifier" holds integer values (IDs).  
+Feature variable names have been cleaned and upgraded into more descriptive names, so they don't have the exact same names as in the Raw Data Set, but the relationship is 1 to 1 and very obvious when you read their name.
 
 | Variable                            | Description                                                                 | Range                                                               |
 |-------------------------------------|-----------------------------------------------------------------------------|---------------------------------------------------------------------|
@@ -101,7 +102,7 @@ These are the steps followed:
     "./UCI HAR Dataset/test/X_test.txt"  
     "./UCI HAR Dataset/test/subject_test.txt"  
     "./UCI HAR Dataset/test/y_test.txt"  
-After reading these files we obtain: a 561-feature vector with time and frequency domain variables (numeric), its activity label (integer) and an identifier of the subject who carried out the experiment (integer), split in two separate Data Sets: test and train. In addition it is also collected the 561 feature variable names (features.txt) and the 6 activity label names to be used to produce tidy data. The rest of the variables and data from the raw data package are ignored.  
+After reading these files we obtain: a 561-feature vector with time and frequency domain variables (numeric), its activity label (integer) and an identifier of the subject who carried out the experiment (integer), split in two separate Data Sets: test and train. In addition I also collected the variable names for the 561 feature variables and the 6 activity label names to be used to produce tidy data. The rest of the variables and data from the raw data package are ignored.  
 The complete list of Feature Variables can be consulted in a separated CodeBook in the Raw Data Set package referenced in the "Raw Data" section of this guide. The full definition of all the raw data variables and where they come from is also described in that CodeBook and can be consulted there.  
 It is important to highlight that Features are normalized and bounded within [-1,1]. This normalization cancel the units.
      + **Once all raw data is collected, it is combined it together.**
