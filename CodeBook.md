@@ -64,8 +64,19 @@ This set seems to be also free of the common errors detailed in that paper.
 6.  **Write tidy data set into tidy.txt file.**
 Last step in this proces is to output the Tidy Data Set into a file called tidy.txt
 
+| Tables   |      Are      |  Cool |
+|----------|:-------------:|------:|
+| col 1 is |  left-aligned | $1600 |
+| col 2 is |    centered   |   $12 |
+| col 3 is | right-aligned |    $1 |
+
+
 
 ## Tidy Data Dictionary:
+
+
+
+
 
 | Variable                           | Range  | Description| 
 | ------------------------------------------------------------------------------------------------------------------------ | 
