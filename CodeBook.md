@@ -102,22 +102,22 @@ These are the steps followed:
     "./UCI HAR Dataset/test/X_test.txt"  
     "./UCI HAR Dataset/test/subject_test.txt"  
     "./UCI HAR Dataset/test/y_test.txt"  
-After reading these files we obtain: a 561-feature vector with time and frequency domain variables (numeric), its activity label (integer) and an identifier of the subject who carried out the experiment (integer), split in two separate Data Sets: test and train. In addition I also collected the variable names for the 561 feature variables and the 6 activity label names to be used to produce tidy data. The rest of the variables and data from the raw data package are ignored.  
+After reading these files we obtain: a 561-feature set with time and frequency domain variables (numeric), its activity label (integer) and an identifier of the subject who carried out the experiment (integer), split in two separate Data Sets: test and train. In addition I also collected the variable names for the 561 feature variables and the 6 activity label names to be used to produce tidy data. The rest of the variables and data from the raw data package are ignored.  
 The complete list of Feature Variables can be consulted in a separated CodeBook in the Raw Data Set package referenced in the "Raw Data" section of this guide. The full definition of all the raw data variables and where they come from is also described in that CodeBook and can be consulted there.  
 It is important to highlight that Features are normalized and bounded within [-1,1]. This normalization cancel the units.
-     + **Once all raw data is collected, it is combined it together.**
+     + **Once all raw data is collected, it is combined together.**
     As described and illustrated in detaill in the README file of this repository, the data we are processing does not contain any big irregularity that we must correct to obtain a tidy data set. All feature variables are independent variables, and all rows are separated observations. Because of those reasons and the fact that all input data sets fit together clipping them in the right order (see README file diagram), no merge or join was executed in this step.  
     The result of this clipping is a single data set with the activity label, subject id and the 561 feature variables, containing 10299 observations (together the train and the test sets)
-    Additionally we use import the raw data feature variable names (character) and use it in our data set column names.
+    Additionally I import the raw data feature variable names (character) and use it in our data set column names.
 
-2.  **Subsetting of the data set**
-Subsetting to keep only the variables that represent measurements on the mean and standard deviation: 66 variables, together with the activity and subject.
+2.  **Subsetting of the data set**  
+Subsetting is performed to keep only the variables that represent measurements on the mean and standard deviation. Result 66 variables, plus the activity and subject.
 
-3.  **Using descriptive activity names**
-Altering the activity variable (IDs from 1 to 6) and replacing all the IDs with their corresponding descriptive Activity Names, previously read from the raw data files. Thus changing this column from integer to character.
+3.  **Using descriptive activity names**  
+Altering(mutating) the activity variable (IDs from 1 to 6) and replacing all the IDs with their corresponding descriptive Activity Names, previously read from the raw data files. Thus changing this column from integer to character.
 
-4.  **Appropriately label the data set with descriptive variable names.**
-A series of tweaks are executed on the variable names to make there more descriptive and readable, beyond what was done already on step #1:
+4.  **Appropriately label the data set with descriptive variable names.**  
+A series of tweaks are executed on the variable names to make them more descriptive and readable, in addition to what was done already on step #1:
     * remove parenthesis "()"
     * remove double "Body" words
     * more descriptive prefix "freq" instead of "f" for frequency domain signals
@@ -130,15 +130,15 @@ A series of tweaks are executed on the variable names to make there more descrip
     * replace "hyphon" with "underscode" for clarity
 All names can be consulted at the end of this Code Book
 
-5. **Creation of a final Tidy Data Set with the average of each variable for each activity and each subject**
-Until here, the 561 feature variables have remained untouched with no changes, only a subsetting (filtering) of some of them has been executed over this set. Before this step we have 10299-row deep data set with observations of these 561 features on 6 activities and by 30 different subjects. What we will produce in this step is a Tidy Data Set averaging each feature variable for each activity and subject.  
-To do this we will proceed with melting of all feature variables and subsequent casting of all of them executing in the way a single aggregation (mean).
-The result Data Set is wide and short: it and contains the same 561 feature variables (numeric) plus the activity (character) and subject (integer), and it has as much as 180 rows (30 subjects by 6 activities). Each row is now the average of all raw observations on this 561 variables for each combination of activity and subject.
+5. **Creation of a final Tidy Data Set with the average of each variable for each activity and each subject**  
+Until here, the 561 feature variables have remained untouched with no changes, only a subsetting (filtering) of some of them has been executed over this set. Before this step we have a 10299-row deep data set with observations of these 561 features on 6 activities and by 30 different subjects. What we will produce in this step is a Tidy Data Set averaging each feature variable for each activity and subject.  
+To do this we will proceed melting all feature variables and afterwards casting all of them while we execute a single aggregation (mean) in the way.
+The result Data Set is wide and short: it contains the same 561 feature variables (numeric) plus the activity (character) and subject (integer), and it has 180 rows (30 subjects by 6 activities). Each row is now the average of all raw observations on this 561 variables for each combination of activity and subject.
 This result seems a satisfactory Tidy Data Set according to Hadley Wickham's Tiday data paper and the rules in it:
     + Each variable forms a column.
     + Each observation forms a row.
     + Each type of observational unit forms a table.
-This set seems to be also free of the common errors detailed in that paper.
+This set seems to be also free from the common errors detailed in that paper.
 
-6.  **Write tidy data set into tidy.txt file.**
+6.  **Write tidy data set into tidy.txt file.**  
 Last step in this proces is to output the Tidy Data Set into a file called tidy.txt
