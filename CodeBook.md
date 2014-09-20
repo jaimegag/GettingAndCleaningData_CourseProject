@@ -64,11 +64,11 @@ This set seems to be also free of the common errors detailed in that paper.
 6.  **Write tidy data set into tidy.txt file.**
 Last step in this proces is to output the Tidy Data Set into a file called tidy.txt
 
-| Tables   |      Are      |  Cool |
-|----------|:-------------:|------:|
-| col 1 is |  left-aligned | $1600 |
-| col 2 is |    centered   |   $12 |
-| col 3 is | right-aligned |    $1 |
+| Variable                           | Range  | Description                                                                | 
+| ------------------------------------------------------------------------------------------------------------------------ | 
+| subject_identifier                 | [1,6]  | Subject Identifier                                                         | 
+| Time_BodyAcc_Mean_Xaxis            | [-1,1] | Mean Time Domain Body Acceleration Signal on X axis                        | 
+| Time_BodyAcc_Mean_Yaxis            | [-1,1] | Mean Time Domain Body Acceleration Signal on Y axis                        | 
 
 
 
@@ -78,11 +78,11 @@ Last step in this proces is to output the Tidy Data Set into a file called tidy.
 
 
 
-| Variable                           | Range  | Description| 
+| Variable                           | Range  | Description                                                                | 
 | ------------------------------------------------------------------------------------------------------------------------ | 
-| subject_identifier                 | [1,6]  | Subject Identifier | 
-| Time_BodyAcc_Mean_Xaxis            | [-1,1] | Mean Time Domain Body Acceleration Signal on X axis | 
-| Time_BodyAcc_Mean_Yaxis            | [-1,1] | Mean Time Domain Body Acceleration Signal on Y axis | 
+| subject_identifier                 | [1,6]  | Subject Identifier                                                         | 
+| Time_BodyAcc_Mean_Xaxis            | [-1,1] | Mean Time Domain Body Acceleration Signal on X axis                        | 
+| Time_BodyAcc_Mean_Yaxis            | [-1,1] | Mean Time Domain Body Acceleration Signal on Y axis                        | 
 | Time_BodyAcc_Mean_Zaxis            | [-1,1] | Mean Time Domain Body Acceleration Signal on Z axis | 
 | Time_GravityAcc_Mean_Xaxis         | [-1,1] | Mean Time Domain Gravity Acceleration Signal on X axis | 
 | Time_GravityAcc_Mean_Yaxis         | [-1,1] | Mean Time Domain Gravity Acceleration Signal on Y axis | 
