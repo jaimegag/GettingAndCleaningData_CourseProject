@@ -64,86 +64,76 @@ This set seems to be also free of the common errors detailed in that paper.
 6.  **Write tidy data set into tidy.txt file.**
 Last step in this proces is to output the Tidy Data Set into a file called tidy.txt
 
-| Variable                           | Range  | Description                                                                | 
-| ------------------------------------------------------------------------------------------------------------------------ | 
-| subject_identifier                 | "[1,6]"  | Subject Identifier                                                         | 
-| Time_BodyAcc_Mean_Xaxis            | "[-1,1]" | Mean Time Domain Body Acceleration Signal on X axis                        | 
-| Time_BodyAcc_Mean_Yaxis            | "[-1,1]" | Mean Time Domain Body Acceleration Signal on Y axis                        | 
-
-
 
 ## Tidy Data Dictionary:
 
-
-
-
-
-| Variable                           | Range  | Description                                                                | 
-| ------------------------------------------------------------------------------------------------------------------------ | 
-| subject_identifier                 | [1,6]  | Subject Identifier                                                         | 
-| Time_BodyAcc_Mean_Xaxis            | [-1,1] | Mean Time Domain Body Acceleration Signal on X axis                        | 
-| Time_BodyAcc_Mean_Yaxis            | [-1,1] | Mean Time Domain Body Acceleration Signal on Y axis                        | 
-| Time_BodyAcc_Mean_Zaxis            | [-1,1] | Mean Time Domain Body Acceleration Signal on Z axis | 
-| Time_GravityAcc_Mean_Xaxis         | [-1,1] | Mean Time Domain Gravity Acceleration Signal on X axis | 
-| Time_GravityAcc_Mean_Yaxis         | [-1,1] | Mean Time Domain Gravity Acceleration Signal on Y axis | 
-| Time_GravityAcc_Mean_Zaxis         | [-1,1] | Mean Time Domain Gravity Acceleration Signal on Z axis | 
-| Time_BodyAccJerk_Mean_Xaxis        | [-1,1] | Mean Time Domain Body Acceleration Jerk Signal on X axis | 
-| Time_BodyAccJerk_Mean_Yaxis        | [-1,1] | Mean Time Domain Body Acceleration Jerk Signal on Y axis | 
-| Time_BodyAccJerk_Mean_Zaxis        | [-1,1] | Mean Time Domain Body Acceleration Jerk Signal on Z axis | 
-| Time_BodyGyro_Mean_Xaxis           | [-1,1] | Mean Time Domain Body Gyroscope Signal on X axis | 
-| Time_BodyGyro_Mean_Yaxis           | [-1,1] | Mean Time Domain Body Gyroscope Signal on Y axis | 
-| Time_BodyGyro_Mean_Zaxis           | [-1,1] | Mean Time Domain Body Gyroscope Signal on Z axis | 
-| Time_BodyGyroJerk_Mean_Xaxis       | [-1,1] | Mean Time Domain Body Gyroscope Jerk Signal on X axis | 
-| Time_BodyGyroJerk_Mean_Yaxis       | [-1,1] | Mean Time Domain Body Gyroscope Jerk Signal on Y axis | 
-| Time_BodyGyroJerk_Mean_Zaxis       | [-1,1] | Mean Time Domain Body Gyroscope Jerk Signal on Z axis | 
-| Time_BodyAccMag_Mean               | [-1,1] | Mean Time Domain Body Acceleration Magnitude Signal | 
-| Time_GravityAccMag_Mean            | [-1,1] | Mean Time Domain Body Gravity Acceleration Magnitude Signal | 
-| Time_BodyAccJerkMag_Mean           | [-1,1] | Mean Time Domain Body Acceleration Jerk Magnitude Signal | 
-| Time_BodyGyroMag_Mean              | [-1,1] | Mean Time Domain Body Gyroscope Magnitude Signal |
-| Time_BodyGyroJerkMag_Mean          | [-1,1] | Mean Time Domain Body Gyroscope Jerk Magnitude Signal | 
-| Freq_BodyAcc_Mean_Xaxis            | [-1,1] | Mean Frequency Domain Body Acceleration Signal on X axis | 
-| Freq_BodyAcc_Mean_Yaxis            | [-1,1] | Mean Frequency Domain Body Acceleration Signal on Y axis | 
-| Freq_BodyAcc_Mean_Zaxis            | [-1,1] | Mean Frequency Domain Body Acceleration Signal on Z axis | 
-| Freq_BodyAccJerk_Mean_Xaxis        | [-1,1] | Mean Frequency Domain Body Acceleration Jerk Signal on X axis | 
-| Freq_BodyAccJerk_Mean_Yaxis        | [-1,1] | Mean Frequency Domain Body Acceleration Jerk Signal on Y axis | 
-| Freq_BodyAccJerk_Mean_Zaxis        | [-1,1] | Mean Frequency Domain Body Acceleration Jerk Signal on Z axis | 
-| Freq_BodyGyro_Mean_Xaxis           | [-1,1] | Mean Frequency Domain Body Gyroscope Signal on X axis | 
-| Freq_BodyGyro_Mean_Yaxis           | [-1,1] | Mean Frequency Domain Body Gyroscope Signal on Y axis | 
-| Freq_BodyGyro_Mean_Zaxis           | [-1,1] | Mean Frequency Domain Body Gyroscope Signal on Z axis | 
-| Freq_BodyAccMag_Mean               | [-1,1] | Mean Frequency Domain Body Acceleration Magnitude Signal | 
-| Freq_BodyAccJerkMag_Mean           | [-1,1] | Mean Frequency Domain Body Acceleration Jerk Magnitude Signal | 
-| Freq_BodyGyroMag_Mean              | [-1,1] | Mean Frequency Domain Body Gyroscope Magnitude Signal | 
-| Freq_BodyGyroJerkMag_Mean          | [-1,1] | Mean Frequency Domain Body Gyroscope Jerk Magnitude Signal | 
-| Time_BodyAcc_StandardDev_Xaxis     | [-1,1] | Standard Deviation Time Domain Body Acceleration Signal on X axis | 
-| Time_BodyAcc_StandardDev_Yaxis     | [-1,1] | Standard Deviation Time Domain Body Acceleration Signal on Y axis | 
-| Time_BodyAcc_StandardDev_Zaxis     | [-1,1] | Standard Deviation Time Domain Body Acceleration Signal on Z axis | 
-| Time_GravityAcc_StandardDev_Xaxis  | [-1,1] | Standard Deviation Time Domain Gravity Acceleration Signal on X axis | 
-| Time_GravityAcc_StandardDev_Yaxis  | [-1,1] | Standard Deviation Time Domain Gravity Acceleration Signal on Y axis | 
-| Time_GravityAcc_StandardDev_Zaxis  | [-1,1] | Standard Deviation Time Domain Gravity Acceleration Signal on Z axis | 
-| Time_BodyAccJerk_StandardDev_Xaxis | [-1,1] | Standard Deviation Time Domain Body Acceleration Jerk Signal on X axis | 
-| Time_BodyAccJerk_StandardDev_Yaxis | [-1,1] | Standard Deviation Time Domain Body Acceleration Jerk Signal on Y axis | 
-| Time_BodyAccJerk_StandardDev_Zaxis | [-1,1] | Standard Deviation Time Domain Body Acceleration Jerk Signal on Z axis | 
-| Time_BodyGyro_StandardDev_Xaxis    | [-1,1] | Standard Deviation Time Domain Body Gyroscope Signal on X axis | 
-| Time_BodyGyro_StandardDev_Yaxis    | [-1,1] | Standard Deviation Time Domain Body Gyroscope Signal on Y axis | 
-| Time_BodyGyro_StandardDev_Zaxis    | [-1,1] | Standard Deviation Time Domain Body Gyroscope Signal on Z axis | 
-| Time_BodyGyroJerk_StandardDev_Xaxis| [-1,1] | Standard Deviation Time Domain Body Gyroscope Jerk Signal on X axis | 
-| Time_BodyGyroJerk_StandardDev_Yaxis| [-1,1] | Standard Deviation Time Domain Body Gyroscope Jerk Signal on Y axis | 
-| Time_BodyGyroJerk_StandardDev_Zaxis| [-1,1] | Standard Deviation Time Domain Body Gyroscope Jerk Signal on Z axis | 
-| Time_BodyAccMag_StandardDev        | [-1,1] | Standard Deviation Time Domain Body Acceleration Magnitude Signal | 
-| Time_GravityAccMag_StandardDev     | [-1,1] | Standard Deviation Time Domain Body Gravity Acceleration Magnitude Signal | 
-| Time_BodyAccJerkMag_StandardDev    | [-1,1] | Standard Deviation Time Domain Body Acceleration Jerk Magnitude Signal | 
-| Time_BodyGyroMag_StandardDev       | [-1,1] | Standard Deviation Time Domain Body Gyroscope Magnitude Signal | 
-| Time_BodyGyroJerkMag_StandardDev   | [-1,1] | Standard Deviation Time Domain Body Gyroscope Jerk Magnitude Signal | 
-| Freq_BodyAcc_StandardDev_Xaxis     | [-1,1] | Standard Deviation Frequency Domain Body Acceleration Signal on X axis | 
-| Freq_BodyAcc_StandardDev_Yaxis     | [-1,1] | Standard Deviation Frequency Domain Body Acceleration Signal on Y axis | 
-| Freq_BodyAcc_StandardDev_Zaxis     | [-1,1] | Standard Deviation Frequency Domain Body Acceleration Signal on Z axis | 
-| Freq_BodyAccJerk_StandardDev_Xaxis | [-1,1] | Standard Deviation Frequency Domain Body Acceleration Jerk Signal on X axis |  
-| Freq_BodyAccJerk_StandardDev_Yaxis | [-1,1] | Standard Deviation Frequency Domain Body Acceleration Jerk Signal on Y axis | 
-| Freq_BodyAccJerk_StandardDev_Zaxis | [-1,1] | Standard Deviation Frequency Domain Body Acceleration Jerk Signal on Z axis | 
-| Freq_BodyGyro_StandardDev_Xaxis    | [-1,1] | Standard Deviation Frequency Domain Body Gyroscope Signal on X axis | 
-| Freq_BodyGyro_StandardDev_Yaxis    | [-1,1] | Standard Deviation Frequency Domain Body Gyroscope Signal on Y axis | 
-| Freq_BodyGyro_StandardDev_Zaxis    | [-1,1] | Standard Deviation Frequency Domain Body Gyroscope Signal on Z axis | 
-| Freq_BodyAccMag_StandardDev        | [-1,1] | Standard Deviation Frequency Domain Body Acceleration Magnitude Signal | 
-| Freq_BodyAccJerkMag_StandardDev    | [-1,1] | Standard Deviation Frequency Domain Body Acceleration Jerk Magnitude Signal | 
-| Freq_BodyGyroMag_StandardDev       | [-1,1] | Standard Deviation Frequency Domain Body Gyroscope Magnitude Signal | 
-| Freq_BodyGyroJerkMag_StandardDev   | [-1,1] | Standard Deviation Frequency Domain Body Gyroscope Jerk Magnitude Signal |
+| Variable                            | Range                                                               | Description                                                                 |
+|-------------------------------------|---------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| activity_name                       | WALKING|WALKING_UPSTAIRS|WALKING_DOWNSTAIRS|SITTING|STANDING|LAYING | Activity Name                                                               |
+| subject_identifier                  | [1,6]                                                               | Subject Identifier                                                          |
+| Time_BodyAcc_Mean_Xaxis             | [-1,1]                                                              | Mean Time Domain Body Acceleration Signal on X axis                         |
+| Time_BodyAcc_Mean_Yaxis             | [-1,1]                                                              | Mean Time Domain Body Acceleration Signal on Y axis                         |
+| Time_BodyAcc_Mean_Zaxis             | [-1,1]                                                              | Mean Time Domain Body Acceleration Signal on Z axis                         |
+| Time_GravityAcc_Mean_Xaxis          | [-1,1]                                                              | Mean Time Domain Gravity  Acceleration Signal on X axis                     |
+| Time_GravityAcc_Mean_Yaxis          | [-1,1]                                                              | Mean Time Domain Gravity Acceleration Signal on Y axis                      |
+| Time_GravityAcc_Mean_Zaxis          | [-1,1]                                                              | Mean Time Domain Gravity Acceleration Signal on Z axis                      |
+| Time_BodyAccJerk_Mean_Xaxis         | [-1,1]                                                              | Mean Time Domain Body Acceleration Jerk Signal on X axis                    |
+| Time_BodyAccJerk_Mean_Yaxis         | [-1,1]                                                              | Mean Time Domain Body Acceleration Jerk Signal on Y axis                    |
+| Time_BodyAccJerk_Mean_Zaxis         | [-1,1]                                                              | Mean Time Domain Body Acceleration Jerk Signal on Z axis                    |
+| Time_BodyGyro_Mean_Xaxis            | [-1,1]                                                              | Mean Time Domain Body Gyroscope Signal on X axis                            |
+| Time_BodyGyro_Mean_Yaxis            | [-1,1]                                                              | Mean Time Domain Body Gyroscope Signal on Y axis                            |
+| Time_BodyGyro_Mean_Zaxis            | [-1,1]                                                              | Mean Time Domain Body Gyroscope Signal on Z axis                            |
+| Time_BodyGyroJerk_Mean_Xaxis        | [-1,1]                                                              | Mean Time Domain Body Gyroscope Jerk Signal on X axis                       |
+| Time_BodyGyroJerk_Mean_Yaxis        | [-1,1]                                                              | Mean Time Domain Body Gyroscope Jerk Signal on Y axis                       |
+| Time_BodyGyroJerk_Mean_Zaxis        | [-1,1]                                                              | Mean Time Domain Body Gyroscope Jerk Signal on Z axis                       |
+| Time_BodyAccMag_Mean                | [-1,1]                                                              | Mean Time Domain Body Acceleration Magnitude Signal                         |
+| Time_GravityAccMag_Mean             | [-1,1]                                                              | Mean Time Domain Body Gravity Acceleration Magnitude Signal                 |
+| Time_BodyAccJerkMag_Mean            | [-1,1]                                                              | Mean Time Domain Body Acceleration Jerk Magnitude Signal                    |
+| Time_BodyGyroMag_Mean               | [-1,1]                                                              | Mean Time Domain Body Gyroscope Magnitude Signal                            |
+| Time_BodyGyroJerkMag_Mean           | [-1,1]                                                              | Mean Time Domain Body Gyroscope Jerk Magnitude Signal                       |
+| Freq_BodyAcc_Mean_Xaxis             | [-1,1]                                                              | Mean Frequency Domain Body Acceleration Signal on X axis                    |
+| Freq_BodyAcc_Mean_Yaxis             | [-1,1]                                                              | Mean Frequency Domain Body Acceleration Signal on Y axis                    |
+| Freq_BodyAcc_Mean_Zaxis             | [-1,1]                                                              | Mean Frequency Domain Body Acceleration Signal on Z axis                    |
+| Freq_BodyAccJerk_Mean_Xaxis         | [-1,1]                                                              | Mean Frequency Domain Body Acceleration Jerk Signal on X axis               |
+| Freq_BodyAccJerk_Mean_Yaxis         | [-1,1]                                                              | Mean Frequency Domain Body Acceleration Jerk Signal on Y axis               |
+| Freq_BodyAccJerk_Mean_Zaxis         | [-1,1]                                                              | Mean Frequency Domain Body Acceleration Jerk Signal on Z axis               |
+| Freq_BodyGyro_Mean_Xaxis            | [-1,1]                                                              | Mean Frequency Domain Body Gyroscope Signal on X axis                       |
+| Freq_BodyGyro_Mean_Yaxis            | [-1,1]                                                              | Mean Frequency Domain Body Gyroscope Signal on Y axis                       |
+| Freq_BodyGyro_Mean_Zaxis            | [-1,1]                                                              | Mean Frequency Domain Body Gyroscope Signal on Z axis                       |
+| Freq_BodyAccMag_Mean                | [-1,1]                                                              | Mean Frequency Domain Body Acceleration Magnitude Signal                    |
+| Freq_BodyAccJerkMag_Mean            | [-1,1]                                                              | Mean Frequency Domain Body Acceleration Jerk Magnitude Signal               |
+| Freq_BodyGyroMag_Mean               | [-1,1]                                                              | Mean Frequency Domain Body Gyroscope Magnitude Signal                       |
+| Freq_BodyGyroJerkMag_Mean           | [-1,1]                                                              | Mean Frequency Domain Body Gyroscope Jerk Magnitude Signal                  |
+| Time_BodyAcc_StandardDev_Xaxis      | [-1,1]                                                              | Standard Deviation Time Domain Body Acceleration Signal on X axis           |
+| Time_BodyAcc_StandardDev_Yaxis      | [-1,1]                                                              | Standard Deviation Time Domain Body Acceleration Signal on Y axis           |
+| Time_BodyAcc_StandardDev_Zaxis      | [-1,1]                                                              | Standard Deviation Time Domain Body Acceleration Signal on Z axis           |
+| Time_GravityAcc_StandardDev_Xaxis   | [-1,1]                                                              | Standard Deviation Time Domain Gravity  Acceleration Signal on X axis       |
+| Time_GravityAcc_StandardDev_Yaxis   | [-1,1]                                                              | Standard Deviation Time Domain Gravity Acceleration Signal on Y axis        |
+| Time_GravityAcc_StandardDev_Zaxis   | [-1,1]                                                              | Standard Deviation Time Domain Gravity Acceleration Signal on Z axis        |
+| Time_BodyAccJerk_StandardDev_Xaxis  | [-1,1]                                                              | Standard Deviation Time Domain Body Acceleration Jerk Signal on X axis      |
+| Time_BodyAccJerk_StandardDev_Yaxis  | [-1,1]                                                              | Standard Deviation Time Domain Body Acceleration Jerk Signal on Y axis      |
+| Time_BodyAccJerk_StandardDev_Zaxis  | [-1,1]                                                              | Standard Deviation Time Domain Body Acceleration Jerk Signal on Z axis      |
+| Time_BodyGyro_StandardDev_Xaxis     | [-1,1]                                                              | Standard Deviation Time Domain Body Gyroscope Signal on X axis              |
+| Time_BodyGyro_StandardDev_Yaxis     | [-1,1]                                                              | Standard Deviation Time Domain Body Gyroscope Signal on Y axis              |
+| Time_BodyGyro_StandardDev_Zaxis     | [-1,1]                                                              | Standard Deviation Time Domain Body Gyroscope Signal on Z axis              |
+| Time_BodyGyroJerk_StandardDev_Xaxis | [-1,1]                                                              | Standard Deviation Time Domain Body Gyroscope Jerk Signal on X axis         |
+| Time_BodyGyroJerk_StandardDev_Yaxis | [-1,1]                                                              | Standard Deviation Time Domain Body Gyroscope Jerk Signal on Y axis         |
+| Time_BodyGyroJerk_StandardDev_Zaxis | [-1,1]                                                              | Standard Deviation Time Domain Body Gyroscope Jerk Signal on Z axis         |
+| Time_BodyAccMag_StandardDev         | [-1,1]                                                              | Standard Deviation Time Domain Body Acceleration Magnitude Signal           |
+| Time_GravityAccMag_StandardDev      | [-1,1]                                                              | Standard Deviation Time Domain Body Gravity Acceleration Magnitude Signal   |
+| Time_BodyAccJerkMag_StandardDev     | [-1,1]                                                              | Standard Deviation Time Domain Body Acceleration Jerk Magnitude Signal      |
+| Time_BodyGyroMag_StandardDev        | [-1,1]                                                              | Standard Deviation Time Domain Body Gyroscope Magnitude Signal              |
+| Time_BodyGyroJerkMag_StandardDev    | [-1,1]                                                              | Standard Deviation Time Domain Body Gyroscope Jerk Magnitude Signal         |
+| Freq_BodyAcc_StandardDev_Xaxis      | [-1,1]                                                              | Standard Deviation Frequency Domain Body Acceleration Signal on X axis      |
+| Freq_BodyAcc_StandardDev_Yaxis      | [-1,1]                                                              | Standard Deviation Frequency Domain Body Acceleration Signal on Y axis      |
+| Freq_BodyAcc_StandardDev_Zaxis      | [-1,1]                                                              | Standard Deviation Frequency Domain Body Acceleration Signal on Z axis      |
+| Freq_BodyAccJerk_StandardDev_Xaxis  | [-1,1]                                                              | Standard Deviation Frequency Domain Body Acceleration Jerk Signal on X axis |
+| Freq_BodyAccJerk_StandardDev_Yaxis  | [-1,1]                                                              | Standard Deviation Frequency Domain Body Acceleration Jerk Signal on Y axis |
+| Freq_BodyAccJerk_StandardDev_Zaxis  | [-1,1]                                                              | Standard Deviation Frequency Domain Body Acceleration Jerk Signal on Z axis |
+| Freq_BodyGyro_StandardDev_Xaxis     | [-1,1]                                                              | Standard Deviation Frequency Domain Body Gyroscope Signal on X axis         |
+| Freq_BodyGyro_StandardDev_Yaxis     | [-1,1]                                                              | Standard Deviation Frequency Domain Body Gyroscope Signal on Y axis         |
+| Freq_BodyGyro_StandardDev_Zaxis     | [-1,1]                                                              | Standard Deviation Frequency Domain Body Gyroscope Signal on Z axis         |
+| Freq_BodyAccMag_StandardDev         | [-1,1]                                                              | Standard Deviation Frequency Domain Body Acceleration Magnitude Signal      |
+| Freq_BodyAccJerkMag_StandardDev     | [-1,1]                                                              | Standard Deviation Frequency Domain Body Acceleration Jerk Magnitude Signal |
+| Freq_BodyGyroMag_StandardDev        | [-1,1]                                                              | Standard Deviation Frequency Domain Body Gyroscope Magnitude Signal         |
+| Freq_BodyGyroJerkMag_StandardDev    | [-1,1]                                                              | Standard Deviation Frequency Domain Body Gyroscope Jerk Magnitude Signal    |
