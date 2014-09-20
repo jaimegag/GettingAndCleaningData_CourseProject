@@ -66,9 +66,9 @@ Last step in this proces is to output the Tidy Data Set into a file called tidy.
 
 | Variable                           | Range  | Description                                                                | 
 | ------------------------------------------------------------------------------------------------------------------------ | 
-| subject_identifier                 | [1,6]  | Subject Identifier                                                         | 
-| Time_BodyAcc_Mean_Xaxis            | [-1,1] | Mean Time Domain Body Acceleration Signal on X axis                        | 
-| Time_BodyAcc_Mean_Yaxis            | [-1,1] | Mean Time Domain Body Acceleration Signal on Y axis                        | 
+| subject_identifier                 | "[1,6]"  | Subject Identifier                                                         | 
+| Time_BodyAcc_Mean_Xaxis            | "[-1,1]" | Mean Time Domain Body Acceleration Signal on X axis                        | 
+| Time_BodyAcc_Mean_Yaxis            | "[-1,1]" | Mean Time Domain Body Acceleration Signal on Y axis                        | 
 
 
 
