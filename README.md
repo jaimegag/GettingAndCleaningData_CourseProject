@@ -10,7 +10,7 @@ To run the run_analysis.R script from your R console, make sure the following co
 * The run_analysis.R script is in your working directory
 * You have previously downloaded the raw data from its URL and unzipped it into a "UCI HAR Dataset" folder
 * Your working directory contains that "UCI HAR Dataset" folder
-* The following packages are loaded in your R session: "reshape2" and "dplyr"
+* The following packages are loaded in your R session: "reshape2", "plyr" and "dplyr"
 
 Then source the script with a command like this: `source("./run_analysis.R")`.  
 Please **allow ~40 seconds for the script to finish**.  
