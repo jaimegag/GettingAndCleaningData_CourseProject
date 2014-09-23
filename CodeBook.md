@@ -19,7 +19,7 @@ Feature variable names have been cleaned and upgraded into more descriptive name
 
 | Variable                            | Description                                                                 | Range                                                               |
 |-------------------------------------|-----------------------------------------------------------------------------|---------------------------------------------------------------------|
-| activity_name                       | Activity Name                                                               | WALKING|WALKING_UPSTAIRS|WALKING_DOWNSTAIRS|SITTING|STANDING|LAYING |
+| activity_name                       | Activity Name                                                               | WALKING,WALKING_UPSTAIRS,WALKING_DOWNSTAIRS,SITTING,STANDING,LAYING |
 | subject_identifier                  | Subject Identifier                                                          | [1,6]                                                               |
 | Time_BodyAcc_Mean_Xaxis             | Mean Time Domain Body Acceleration Signal on X axis                         | [-1,1]                                                              |
 | Time_BodyAcc_Mean_Yaxis             | Mean Time Domain Body Acceleration Signal on Y axis                         | [-1,1]                                                              |
