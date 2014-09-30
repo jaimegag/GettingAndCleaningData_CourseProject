@@ -16,7 +16,7 @@
 #       of each variable for each activity and each subject.
 #    6. Write tidy data set into tidy.txt file
 #
-# SCRIPT REQUIRES "reshape2" and "dplyr" packages loaded!!
+# SCRIPT REQUIRES "reshape2", "plyr" and "dplyr" packages loaded!!
 
 # STEP 1
 # -> Merges the training and test data sets to create one data set.
